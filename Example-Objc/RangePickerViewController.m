@@ -80,6 +80,7 @@
     
     // For UITest
     self.calendar.accessibilityIdentifier = @"calendar";
+    self.calendar.locale = [NSLocale currentLocale];
 }
 
 - (void)dealloc
