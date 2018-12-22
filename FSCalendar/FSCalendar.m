@@ -87,7 +87,6 @@ typedef NS_ENUM(NSUInteger, FSCalendarOrientation) {
 - (CGSize)sizeThatFits:(CGSize)size scope:(FSCalendarScope)scope;
 
 - (void)scrollToDate:(NSDate *)date;
-- (void)scrollToDate:(NSDate *)date animated:(BOOL)animated;
 - (void)scrollToPageForDate:(NSDate *)date animated:(BOOL)animated;
 
 - (BOOL)isPageInRange:(NSDate *)page;
