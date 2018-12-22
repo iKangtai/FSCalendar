@@ -39,6 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSCalendar (FSCalendarExtensions)
 
+- (NSInteger)yearOfDate:(NSDate *)date;
 - (nullable NSDate *)fs_firstDayOfMonth:(NSDate *)month;
 - (nullable NSDate *)fs_lastDayOfMonth:(NSDate *)month;
 - (nullable NSDate *)fs_firstDayOfWeek:(NSDate *)week;

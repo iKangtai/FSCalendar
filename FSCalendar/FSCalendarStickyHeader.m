@@ -13,33 +13,6 @@
 #import "FSCalendarConstants.h"
 #import "FSCalendarDynamicHeader.h"
 
-@implementation NSDate (Utilities)
-
-- (NSDateComponents *)dateComponents {
-    NSCalendar *calendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
-    NSInteger unitFlag = NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitHour|NSCalendarUnitMinute|NSCalendarUnitSecond|NSCalendarUnitWeekday|NSCalendarUnitWeekOfYear|NSCalendarUnitWeekOfMonth|NSCalendarUnitNanosecond;
-    NSDateComponents *comp = [calendar components:unitFlag fromDate:self];
-    comp.nanosecond = 0;
-    
-    return comp;
-}
-
-- (NSInteger)year {
-    return [[self dateComponents] year];
-}
-
-- (NSInteger)month {
-    return [[self dateComponents] month];
-}
-
-- (NSInteger)day {
-    return [[self dateComponents] day];
-}
-
-@end
-
-
-
 @interface FSCalendarStickyHeader ()
 
 @property (weak  , nonatomic) UIView  *contentView;
@@ -125,7 +98,7 @@
 {
     _month = month;
 //    _calendar.formatter.dateFormat = self.calendar.appearance.headerDateFormat;
-    NSString * formatTemp = [month year] == [[NSDate date] year] ? @"MMM" : @"yMMM";
+    NSString * formatTemp = [_calendar.gregorian yearOfDate:month] == [_calendar.gregorian yearOfDate:[NSDate date]] ? @"MMM" : @"yMMM";
     _calendar.formatter.dateFormat = [NSDateFormatter dateFormatFromTemplate:formatTemp options:0 locale:[NSLocale currentLocale]];
     BOOL usesUpperCase = (self.calendar.appearance.caseOptions & 15) == FSCalendarCaseOptionsHeaderUsesUpperCase;
     NSString *text = [_calendar.formatter stringFromDate:_month];

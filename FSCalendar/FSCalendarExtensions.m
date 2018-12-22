@@ -146,6 +146,13 @@
 
 @implementation NSCalendar (FSCalendarExtensions)
 
+- (NSInteger)yearOfDate:(NSDate *)date
+{
+    if (!date) return -1;
+    NSDateComponents *components = [self components:NSCalendarUnitYear fromDate:date];
+    return components.year;
+}
+
 - (nullable NSDate *)fs_firstDayOfMonth:(NSDate *)month
 {
     if (!month) return nil;
