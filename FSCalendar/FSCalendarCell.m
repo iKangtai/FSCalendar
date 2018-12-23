@@ -68,6 +68,8 @@
     shapeLayer.backgroundColor = [UIColor clearColor].CGColor;
     shapeLayer.borderWidth = 1.0;
     shapeLayer.borderColor = [UIColor clearColor].CGColor;
+    shapeLayer.lineDashPattern = [NSArray arrayWithObjects:[NSNumber numberWithInt:3],
+                                  [NSNumber numberWithInt:1.5],nil];
     shapeLayer.opacity = 0;
     [self.contentView.layer insertSublayer:shapeLayer below:_titleLabel.layer];
     self.shapeLayer = shapeLayer;
