@@ -68,8 +68,8 @@
     shapeLayer.backgroundColor = [UIColor clearColor].CGColor;
     shapeLayer.borderWidth = 1.0;
     shapeLayer.borderColor = [UIColor clearColor].CGColor;
-//    shapeLayer.lineDashPattern = [NSArray arrayWithObjects:[NSNumber numberWithInt:3],
-//                                  [NSNumber numberWithInt:1.5],nil];
+    shapeLayer.lineDashPattern = [NSArray arrayWithObjects:[NSNumber numberWithInt:3],
+                                  [NSNumber numberWithInt:1.5],nil];
     shapeLayer.opacity = 0;
     [self.contentView.layer insertSublayer:shapeLayer below:_titleLabel.layer];
     self.shapeLayer = shapeLayer;
@@ -172,19 +172,19 @@
 {
     _shapeLayer.opacity = 1;
         
-    CAAnimationGroup *group = [CAAnimationGroup animation];
-    CABasicAnimation *zoomOut = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
-    zoomOut.fromValue = @0.3;
-    zoomOut.toValue = @1.2;
-    zoomOut.duration = FSCalendarDefaultBounceAnimationDuration/4*3;
-    CABasicAnimation *zoomIn = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
-    zoomIn.fromValue = @1.2;
-    zoomIn.toValue = @1.0;
-    zoomIn.beginTime = FSCalendarDefaultBounceAnimationDuration/4*3;
-    zoomIn.duration = FSCalendarDefaultBounceAnimationDuration/4;
-    group.duration = FSCalendarDefaultBounceAnimationDuration;
-    group.animations = @[zoomOut, zoomIn];
-    [_shapeLayer addAnimation:group forKey:@"bounce"];
+//    CAAnimationGroup *group = [CAAnimationGroup animation];
+//    CABasicAnimation *zoomOut = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+//    zoomOut.fromValue = @0.3;
+//    zoomOut.toValue = @1.2;
+//    zoomOut.duration = FSCalendarDefaultBounceAnimationDuration/4*3;
+//    CABasicAnimation *zoomIn = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+//    zoomIn.fromValue = @1.2;
+//    zoomIn.toValue = @1.0;
+//    zoomIn.beginTime = FSCalendarDefaultBounceAnimationDuration/4*3;
+//    zoomIn.duration = FSCalendarDefaultBounceAnimationDuration/4;
+//    group.duration = FSCalendarDefaultBounceAnimationDuration;
+//    group.animations = @[zoomOut, zoomIn];
+//    [_shapeLayer addAnimation:group forKey:@"bounce"];
     [self configureAppearance];
     
 }

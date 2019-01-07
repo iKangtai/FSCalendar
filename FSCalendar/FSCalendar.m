@@ -1523,7 +1523,7 @@ typedef NS_ENUM(NSUInteger, FSCalendarOrientation) {
 - (void)adjustMonthPosition
 {
     [self requestBoundingDatesIfNecessary];
-    NSDate *targetPage = self.pagingEnabled?self.currentPage:(self.currentPage?:self.selectedDate);
+    NSDate *targetPage = self.pagingEnabled?self.currentPage:(/*self.currentPage?:*/self.selectedDate);
     [self scrollToPageForDate:targetPage animated:NO];
 }
 
