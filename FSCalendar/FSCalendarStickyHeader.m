@@ -99,7 +99,7 @@
 {
     _month = month;
 //    _calendar.formatter.dateFormat = self.calendar.appearance.headerDateFormat;
-    NSString *formatTemp = [_calendar.gregorian yearOfDate:month] == [_calendar.gregorian yearOfDate:[NSDate date]] ? [NSDateFormatter dateFormatFromTemplate:@"MMMM" options:0 locale:[NSLocale localeWithLocaleIdentifier:@"zh-CN"]] : @"MMMM,  yyyy";
+    NSString *formatTemp = [_calendar.gregorian yearOfDate:month] == [_calendar.gregorian yearOfDate:[NSDate date]] ? [NSDateFormatter dateFormatFromTemplate:@"MMMM" options:0 locale:[NSLocale currentLocale]] : @"MMMM,  yyyy";
     _calendar.formatter.dateFormat = formatTemp;
     BOOL usesUpperCase = (self.calendar.appearance.caseOptions & 15) == FSCalendarCaseOptionsHeaderUsesUpperCase;
     NSString *text = [_calendar.formatter stringFromDate:_month];
