@@ -91,6 +91,7 @@
 {
     _titleLabel.font = self.calendar.appearance.headerTitleFont;
     _titleLabel.textColor = self.calendar.appearance.headerTitleColor;
+    _titleLabel.backgroundColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.03];
     [self.weekdayView configureAppearance];
 }
 
@@ -98,8 +99,8 @@
 {
     _month = month;
 //    _calendar.formatter.dateFormat = self.calendar.appearance.headerDateFormat;
-    NSString * formatTemp = [_calendar.gregorian yearOfDate:month] == [_calendar.gregorian yearOfDate:[NSDate date]] ? @"MMM" : @"yMMM";
-    _calendar.formatter.dateFormat = [NSDateFormatter dateFormatFromTemplate:formatTemp options:0 locale:[NSLocale currentLocale]];
+    NSString *formatTemp = [_calendar.gregorian yearOfDate:month] == [_calendar.gregorian yearOfDate:[NSDate date]] ? [NSDateFormatter dateFormatFromTemplate:@"MMMM" options:0 locale:[NSLocale localeWithLocaleIdentifier:@"zh-CN"]] : @"MMMM,  yyyy";
+    _calendar.formatter.dateFormat = formatTemp;
     BOOL usesUpperCase = (self.calendar.appearance.caseOptions & 15) == FSCalendarCaseOptionsHeaderUsesUpperCase;
     NSString *text = [_calendar.formatter stringFromDate:_month];
     text = usesUpperCase ? text.uppercaseString : text;
