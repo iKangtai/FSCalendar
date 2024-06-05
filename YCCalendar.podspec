@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name             = "YCCalendar"
-  s.version          = "2.8.06"
+  s.version          = "2.8.07"
   s.summary          = "iKangtai Calendar. Forked from FSCalendar. A superiorly awesome iOS7+ calendar control, compatible with Objective-C and Swift."
   
   s.homepage         = "https://github.com/iKangtai/FSCalendar"
